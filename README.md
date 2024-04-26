@@ -1,4 +1,4 @@
-# uagrm_app_moodle
+# app-moodle-u
 
 A new Flutter project.
 
