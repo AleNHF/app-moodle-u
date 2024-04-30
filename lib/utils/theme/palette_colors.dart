@@ -10,4 +10,4 @@ class PaletteColors {
   static const Color bgPrimaryColor = Color(0xFFFFFFFF);
   static const Color bgSecondaryColor = Color(0xFFF5F8FF);
   static const Color optionalColor = Color(0xFFF1F3F6);
-}
+} 
