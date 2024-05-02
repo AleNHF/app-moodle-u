@@ -63,7 +63,8 @@ class Course {
         required this.timemodified,
     });
 
-    factory Course.fromRawJson(String str) => Course.fromJson(json.decode(str));
+    // factory Course.fromRawJson(String str) => Course.fromJson(json.decode(str));
+    factory Course.fromRawJson(str) => Course.fromJson(str);
 
     String toRawJson() => json.encode(toJson());
 
