@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:uagrm_app_moodle/home/view/home_view.dart';
 import 'package:uagrm_app_moodle/utils/navbar/app_bar.dart';
 
-void main() {
+void main() async {
+  await dotenv.load(fileName: '.env');
   runApp(MyApp());
 }
 
@@ -11,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Global AppBar Example',
+      title: 'UAGRM - Virtual',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,

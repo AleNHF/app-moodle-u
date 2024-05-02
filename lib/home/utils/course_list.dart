@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:uagrm_app_moodle/home/utils/course_carousel.dart';
-import 'package:uagrm_app_moodle/home/viewmodel/course_viewmodel.dart';
+import 'package:uagrm_app_moodle/home/viewmodel/home_viewmodel.dart';
 
 class CourseList extends StatelessWidget {
-  final CourseViewModel viewModel;
+  final HomeViewModel viewModel;
 
   const CourseList({required this.viewModel});
 
@@ -12,10 +12,9 @@ class CourseList extends StatelessWidget {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider.value(
       value: viewModel,
-      child: Consumer<CourseViewModel>(
+      child: Consumer<HomeViewModel>(
         builder: (context, viewModel, child) {
           final courses = viewModel.courses;
-          print('COURSES LIST ${courses}');
 
           if (courses.isEmpty) {
             return Center(child: CircularProgressIndicator());

@@ -1,9 +1,9 @@
 // ignore_for_file: library_private_types_in_public_api
 
 import 'package:flutter/material.dart';
+import 'package:uagrm_app_moodle/home/utils/calendar_event_card.dart';
 import 'package:uagrm_app_moodle/home/utils/course_list.dart';
-import 'package:uagrm_app_moodle/home/viewmodel/course_viewmodel.dart';
-import 'package:uagrm_app_moodle/utils/theme/palette_colors.dart';
+import 'package:uagrm_app_moodle/home/viewmodel/home_viewmodel.dart';
 
 class HomeView extends StatefulWidget {
   @override
@@ -11,43 +11,38 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-  late final CourseViewModel viewModel;
+  late final HomeViewModel viewModelCourse, viewModelEvent;
 
   @override
   void initState() {
     super.initState();
-    viewModel = CourseViewModel();
-    viewModel.fetchCourses();
+    viewModelCourse = viewModelEvent = HomeViewModel();
+
+    viewModelCourse.fetchCourses();
+    viewModelEvent.fetchCalendarEvents();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: EdgeInsets.only(left: 16, right: 16, top: 16), //EdgeInsets.all(16.0),
-            child: Text(
-              'Mis cursos',
-              style: TextStyle(
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold,
-                  color: PaletteColors.secondaryTextColor),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(left: 16, right: 16, top: 8),
-            child: CourseList(viewModel: viewModel),
-          )
-        ],
-      ),
-    );
+        body: Column(
+      children: [
+        Padding(
+          padding: EdgeInsets.all(8),
+          child: CourseList(viewModel: viewModelCourse),
+        ),
+        Padding(
+          padding: EdgeInsets.all(8),
+          child: CalendarEventCard(viewModel: viewModelCourse),
+        ),
+      ],
+    ));
   }
 
   @override
   void dispose() {
-    viewModel.dispose();
+    viewModelCourse.dispose();
+    viewModelEvent.dispose();
     super.dispose();
   }
 }
