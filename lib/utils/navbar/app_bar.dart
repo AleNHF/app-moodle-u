@@ -1,73 +1,46 @@
-// ignore_for_file: must_be_immutable
-
 import 'package:flutter/material.dart';
+import 'package:uagrm_app_moodle/utils/theme/palette_colors.dart';
 
-class GlobalAppBar extends StatelessWidget {
+class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
-  AnimationController colorAnimationController;
-  Animation colorTween, homeTween, workOutTween, iconTween, drawerTween;
-  Function onPressed;
+  final Function() onNotificationPressed;
 
-  GlobalAppBar(
-      {Key? key,
-      required this.title,
-      required this.colorAnimationController,
-      required this.onPressed,
-      required this.homeTween,
-      required this.colorTween,
-      required this.iconTween,
-      required this.drawerTween,
-      required this.workOutTween})
-      : super(key: key);
+  CustomAppBar({
+    required this.title,
+    required this.onNotificationPressed,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 80,
-      child: AnimatedBuilder(
-        animation: colorAnimationController,
-        builder: (context, child) => AppBar(
-          leading: Icon(
-              Icons.dehaze,
-              color: drawerTween.value,
-            ),
-          backgroundColor: colorTween.value,
-          elevation: 0,
-          titleSpacing: 0.0,
-          title: Row(
-            children: <Widget>[
-              Text(
-                "Hello  ",
-                style: TextStyle(
-                    color: homeTween.value,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
-                    letterSpacing: 1),
-              ),
-              Text(
-                'username',
-                style: TextStyle(
-                    color: workOutTween.value,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
-                    letterSpacing: 1),
-              ),
-            ],
+    return AppBar(
+      title: Row(
+        children: [
+          CircleAvatar(
+            backgroundImage: NetworkImage('https://images.pexels.com/photos/16653685/pexels-photo-16653685/free-photo-of-metal-arc.jpeg'), // Cambiar por la foto del usuario logueado
+            radius: 20,
           ),
-          actions: <Widget>[
-            Icon(
-              Icons.notifications,
-              color: iconTween.value,
-            ),
-            Padding(
-              padding: const EdgeInsets.all(7),
-              child: CircleAvatar(
-                backgroundImage: NetworkImage('image_url'),
-              ),
-            ),
-          ],
-        ),
+          SizedBox(width: 20),
+          Text(
+            title,
+            style: TextStyle(color: PaletteColors.secondaryTextColor),
+          ),
+        ],
       ),
+      actions: [
+        IconButton(
+          icon: Icon(
+            Icons.notifications_outlined,
+            color: PaletteColors.secondaryTextColor,
+            size: 30,
+          ),
+          onPressed: onNotificationPressed,
+        ),
+      ],
+      backgroundColor: PaletteColors.optionalColor,
+      elevation: 1,
     );
   }
+
+  @override
+  Size get preferredSize => Size.fromHeight(kToolbarHeight);
 }
