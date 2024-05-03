@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:uagrm_app_moodle/home/view/home_view.dart';
 import 'package:uagrm_app_moodle/utils/navbar/app_bar.dart';
 
 void main() async {
-  await dotenv.load(fileName: '.env');
+  //await dotenv.load(fileName: '.env');
   runApp(MyApp());
 }
 

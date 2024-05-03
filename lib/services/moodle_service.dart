@@ -1,6 +1,4 @@
 import 'dart:convert';
-
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 
 class MoodleService {
@@ -10,7 +8,7 @@ class MoodleService {
   final String? wsToken = 'c08d2527a618923757be412d964d0209';
 
   //TODO: Get user id from auth
-  final String userId = '3';
+  final String userId = '2';
 
   Future<List<dynamic>> fetchCourses() async {
     const String wsfunction = 'core_enrol_get_users_courses';
@@ -39,12 +37,13 @@ class MoodleService {
   }
 
   Future<List<dynamic>> fetchCalendarEvents() async {
-    const String wsfunction = 'core_calendar_get_calendar_events';
+    const String wsfunction = 'core_calendar_get_action_events_by_timesort';
     final response = await http.post(Uri.parse(
         '$moodleUrl?wstoken=$wsToken&wsfunction=$wsfunction&moodlewsrestformat=json&userid=$userId'));
 
     if (response.statusCode == 200) {
-      return jsonDecode(response.body);
+      final jsonResponse = jsonDecode(response.body);
+      return jsonResponse['events'];
     } else {
       throw Exception('Error al obtener eventos del calendario: ${response.statusCode}');
     }

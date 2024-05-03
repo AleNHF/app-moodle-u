@@ -2,8 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:uagrm_app_moodle/home/utils/calendar_event_card.dart';
+import 'package:uagrm_app_moodle/home/utils/calendar_event_list.dart';
 import 'package:uagrm_app_moodle/home/utils/course_list.dart';
-import 'package:uagrm_app_moodle/home/viewmodel/home_viewmodel.dart';
+import 'package:uagrm_app_moodle/home/viewmodel/calendar_event_viewmodel.dart';
+import 'package:uagrm_app_moodle/home/viewmodel/course_viewmodel.dart';
 
 class HomeView extends StatefulWidget {
   @override
@@ -11,12 +13,14 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-  late final HomeViewModel viewModelCourse, viewModelEvent;
+  late final CourseViewModel viewModelCourse; 
+  late final CalendarEventViewModel viewModelEvent;
 
   @override
   void initState() {
     super.initState();
-    viewModelCourse = viewModelEvent = HomeViewModel();
+    viewModelCourse = CourseViewModel();
+    viewModelEvent = CalendarEventViewModel();
 
     viewModelCourse.fetchCourses();
     viewModelEvent.fetchCalendarEvents();
@@ -33,7 +37,7 @@ class _HomeViewState extends State<HomeView> {
         ),
         Padding(
           padding: EdgeInsets.all(8),
-          child: CalendarEventCard(viewModel: viewModelCourse),
+          child: CalendarEventList(viewModel: viewModelEvent),
         ),
       ],
     ));
