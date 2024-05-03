@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+
 import 'package:provider/provider.dart';
-import 'package:uagrm_app_moodle/courses/view/course_screen.dart';
+
 import 'package:uagrm_app_moodle/courses/viewmodel/course_viewmodel.dart';
+import 'package:uagrm_app_moodle/router/app_routes.dart';
 import 'package:uagrm_app_moodle/theme/app_theme.dart';
-import 'package:uagrm_app_moodle/utils/app_bar.dart';
+// import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 void main() async {
   // await dotenv.load(fileName: '.env');
@@ -30,13 +32,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'UAGRM - Virtual',
       theme: AppTheme.lightTheme,
-      home: Scaffold(
-        appBar: CustomAppBar(
-          title: 'User Name',
-          ),
-          body: CourseScreen()
-          // body: HomeView()
-      ),
+      initialRoute: AppRoutes.initialRoute,
+      routes: AppRoutes.getAppRoutes(),
     );
   }
 }

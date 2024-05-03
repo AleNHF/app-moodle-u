@@ -11,18 +11,23 @@ class MoodleService {
   final String userId = '2';
 
   Future<List<dynamic>> fetchCourses() async {
-    const String wsfunction = 'core_enrol_get_users_courses';
-    final response = await http.post(
-      Uri.parse(
-          '$moodleUrl?wstoken=$wsToken&wsfunction=$wsfunction&moodlewsrestformat=json&userid=$userId'),
-    );
+  print('Realizando solicitud HTTP...');
+  const String wsfunction = 'core_enrol_get_users_courses';
+  final url = Uri.parse(
+    '$moodleUrl?wstoken=$wsToken&wsfunction=$wsfunction&moodlewsrestformat=json&userid=$userId',
+  );
+  print('URL de solicitud: $url');
 
-    if (response.statusCode == 200) {
-      return jsonDecode(response.body);
-    } else {
-      throw Exception('Error al obtener cursos: ${response.statusCode}');
-    }
+  final response = await http.post(url);
+  print('Código de respuesta: ${response.statusCode}');
+  print('Respuesta del servidor: ${response.body}');
+
+  if (response.statusCode == 200) {
+    return jsonDecode(response.body);
+  } else {
+    throw Exception('Error al obtener cursos: ${response.statusCode}');
   }
+}
 
   Future<List<dynamic>> fetchAssigments() async {
     const String wsfunction = 'mod_assign_get_assignments';
