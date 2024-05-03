@@ -15,9 +15,9 @@ class CourseScreen extends StatelessWidget {
     final courses = courseViewModel.courses;
 
     return  Scaffold(
-      appBar: AppBar(
+      /* appBar: AppBar(
         title: Text('Lista de cursos'),
-      ),
+      ), */
       body: ListView.builder(
         padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
         itemCount: courses.length,

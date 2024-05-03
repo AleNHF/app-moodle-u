@@ -4,8 +4,8 @@ import 'package:http/http.dart' as http;
 class MoodleService {
   /* final String? moodleUrl = dotenv.env['MOODLE_API_URL'];
   final String? wsToken = dotenv.env['MOODLE_API_TOKEN']; */
-  final String? moodleUrl = 'http://localhost/moodle/webservice/rest/server.php';
-  final String? wsToken = '6b769994195a4c0d1a7df20149aa3fbd';
+  final String? moodleUrl = 'http://localhost/escuela-moodle/moodle/webservice/rest/server.php';
+  final String? wsToken = 'c08d2527a618923757be412d964d0209';
 
   //TODO: Get user id from auth
   final String userId = '2';

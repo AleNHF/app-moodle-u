@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:uagrm_app_moodle/home/models/course.dart';
-import 'package:uagrm_app_moodle/utils/theme/palette_colors.dart';
+import 'package:uagrm_app_moodle/theme/app_colors.dart';
 
 class CourseCarousel extends StatelessWidget {
   final List<Course> courses;
@@ -15,7 +15,7 @@ class CourseCarousel extends StatelessWidget {
       child: Card(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15.0),
-          side: BorderSide(color: PaletteColors.primaryTextColor, width: 0.5),
+          side: BorderSide(color: AppColors.primaryTextColor, width: 0.5),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -27,7 +27,7 @@ class CourseCarousel extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 16.0,
                   fontWeight: FontWeight.bold,
-                  color: PaletteColors.secondaryTextColor,
+                  color: AppColors.secondaryTextColor,
                 ),
               ),
             ),
@@ -57,7 +57,7 @@ class CourseCarousel extends StatelessWidget {
                                         height: 70,
                                         width: 280,
                                         decoration: BoxDecoration(
-                                          color: PaletteColors.accentColor,
+                                          color: AppColors.accentColor,
                                           borderRadius: BorderRadius.only(
                                             topLeft: Radius.circular(16.0),
                                             topRight: Radius.circular(16.0),
@@ -77,7 +77,7 @@ class CourseCarousel extends StatelessWidget {
                                                 course.shortName,
                                                 style: TextStyle(
                                                   fontSize: 12.0,
-                                                  color: PaletteColors
+                                                  color: AppColors
                                                       .primaryTextColor,
                                                   fontWeight: FontWeight.w300,
                                                 ),
@@ -109,7 +109,7 @@ class CourseCarousel extends StatelessWidget {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15.0),
                         side: BorderSide(
-                            color: PaletteColors.primaryTextColor, width: 0.5),
+                            color: AppColors.primaryTextColor, width: 0.5),
                       ),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -121,7 +121,7 @@ class CourseCarousel extends StatelessWidget {
                               style: TextStyle(
                                 fontSize: 16.0,
                                 fontWeight: FontWeight.bold,
-                                color: PaletteColors.secondaryTextColor,
+                                color: AppColors.secondaryTextColor,
                               ),
                             ),
                           ),

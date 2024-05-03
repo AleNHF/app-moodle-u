@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:uagrm_app_moodle/home/models/calendar_event.dart';
-import 'package:uagrm_app_moodle/utils/theme/palette_colors.dart';
+import 'package:uagrm_app_moodle/theme/app_colors.dart';
 
 class CalendarEventCard extends StatelessWidget {
   final List<CalendarEvent> events;
@@ -14,7 +14,7 @@ class CalendarEventCard extends StatelessWidget {
         child: Card(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15.0),
-            side: BorderSide(color: PaletteColors.primaryTextColor, width: 0.5),
+            side: BorderSide(color: AppColors.primaryTextColor, width: 0.5),
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -26,7 +26,7 @@ class CalendarEventCard extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 16.0,
                     fontWeight: FontWeight.bold,
-                    color: PaletteColors.secondaryTextColor,
+                    color: AppColors.secondaryTextColor,
                   ),
                 ),
               ),
@@ -67,7 +67,7 @@ class CalendarEventCard extends StatelessWidget {
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(15.0),
                           side: BorderSide(
-                              color: PaletteColors.primaryTextColor,
+                              color: AppColors.primaryTextColor,
                               width: 0.5),
                         ),
                         child: Column(
@@ -80,7 +80,7 @@ class CalendarEventCard extends StatelessWidget {
                                 style: TextStyle(
                                   fontSize: 16.0,
                                   fontWeight: FontWeight.bold,
-                                  color: PaletteColors.secondaryTextColor,
+                                  color: AppColors.secondaryTextColor,
                                 ),
                               ),
                             ),
