@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:uagrm_app_moodle/theme/app_colors.dart';
-import 'package:uagrm_app_moodle/theme/app_theme.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;

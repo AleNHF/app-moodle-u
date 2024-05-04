@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:uagrm_app_moodle/home/models/calendar_event.dart';
+import 'package:uagrm_app_moodle/models/calendar_event.dart';
 import 'package:uagrm_app_moodle/theme/app_colors.dart';
 
 class CalendarEventCard extends StatelessWidget {
-  final List<CalendarEvent> events;
+  final List<Event> events;
 
   const CalendarEventCard({required this.events});
 
@@ -49,10 +49,10 @@ class CalendarEventCard extends StatelessWidget {
                                               Icon(Icons.access_time),
                                               SizedBox(width: 4.0),
                                               Text(removeHtmlTags(
-                                                  event.formattedTime)),
+                                                  event.formattedtime)),
                                             ],
                                           ),
-                                          subtitle: Text(event.activityName),
+                                          subtitle: Text(event.activityname),
                                           trailing: Icon(Icons.chevron_right),
                                         ),
                                       ],

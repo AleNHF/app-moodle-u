@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'package:uagrm_app_moodle/courses/utils/utils.dart';
-import 'package:uagrm_app_moodle/courses/viewmodel/course_viewmodel.dart';
+import 'package:uagrm_app_moodle/views/courses/utils/utils.dart';
+import 'package:uagrm_app_moodle/viewmodels/course_viewmodel.dart';
 
 
 class CourseScreen extends StatelessWidget {
@@ -15,9 +15,6 @@ class CourseScreen extends StatelessWidget {
     final courses = courseViewModel.courses;
 
     return  Scaffold(
-      /* appBar: AppBar(
-        title: Text('Lista de cursos'),
-      ), */
       body: ListView.builder(
         padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
         itemCount: courses.length,

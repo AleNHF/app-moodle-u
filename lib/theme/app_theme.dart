@@ -28,12 +28,12 @@ class AppTheme {
     ),
 
     //Bottom Navigation Bar Theme
-    bottomAppBarTheme: const BottomAppBarTheme(
-      color: AppColors.bgSecondaryColor,
-      shadowColor: Colors.transparent,
-      shape: CircularNotchedRectangle(),
-      height: 80
-    ),
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      selectedIconTheme: IconThemeData(color: AppColors.primaryRed),
+      unselectedIconTheme: IconThemeData(color: AppColors.iconColor),
+      showSelectedLabels: true,
+      selectedItemColor: AppColors.primaryRed
+    ), 
 
     // agregar los estilos de los demas widget
     

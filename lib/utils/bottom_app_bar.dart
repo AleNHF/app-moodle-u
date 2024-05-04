@@ -1,23 +1,51 @@
 import 'package:flutter/material.dart';
+import 'package:uagrm_app_moodle/utils/app_bar.dart';
+import 'package:uagrm_app_moodle/views/courses/view/course_screen.dart';
+import 'package:uagrm_app_moodle/views/home/view/home_view.dart';
+import 'package:uagrm_app_moodle/router/app_routes.dart';
 import 'package:uagrm_app_moodle/theme/app_colors.dart';
-import 'package:uagrm_app_moodle/theme/app_theme.dart';
 
-class CustomBottomAppBar extends StatelessWidget {
-  int _selectedTab = 0;
+class CustomBottomAppBar extends StatefulWidget {
+  @override
+  State<CustomBottomAppBar> createState() => _CustomBottomAppBarState();
+}
 
-  c
+class _CustomBottomAppBarState extends State<CustomBottomAppBar> {
+  int _selectedIndex = 0;
+
+  List<Widget> _widgetOptions = <Widget>[HomeView(), CourseScreen()];
 
   @override
   Widget build(BuildContext context) {
-    return BottomNavigationBar(
-      currentIndex: _selectedTab,
-      items: [
-        BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-        BottomNavigationBarItem(icon: Icon(Icons.calendar_month_outlined), label: "Calendario"),
-        BottomNavigationBarItem(icon: Icon(Icons.chat_outlined), label: "Chat"),
-        BottomNavigationBarItem(icon: Icon(Icons.notifications_none_outlined), label: "Notificaciones"),
-        BottomNavigationBarItem(icon: Icon(Icons.dashboard_outlined), label: "Menú")
-      ]
+    return Scaffold(
+        appBar: CustomAppBar(
+          title: 'UAGRM - Virtual',
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          currentIndex: _selectedIndex,
+          items: _buildBottomNavBarItems(context),
+          onTap: (index) {
+            setState(() {
+              _selectedIndex = index;
+            });
+          },
+        ),
+        body: _widgetOptions.elementAt(_selectedIndex),    
     );
+  }
+
+  List<BottomNavigationBarItem> _buildBottomNavBarItems(BuildContext context) {
+    List<BottomNavigationBarItem> items = [];
+
+    for (final option in AppRoutes.menuOptions) {
+      if (option.route != 'bottomapp') {
+        items.add(BottomNavigationBarItem(
+          backgroundColor: AppColors.optionalColor,
+          icon: Icon(option.icon),
+          label: option.name));
+      }
+    }
+
+    return items;
   }
 }

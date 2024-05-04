@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:uagrm_app_moodle/home/models/course.dart';
+import 'package:uagrm_app_moodle/models/course.dart';
 import 'package:uagrm_app_moodle/theme/app_colors.dart';
 
 class CourseCarousel extends StatelessWidget {
@@ -64,7 +64,7 @@ class CourseCarousel extends StatelessWidget {
                                           ),
                                         ),
                                         child: SvgPicture.network(
-                                            course.courseImage),
+                                            course.courseimage),
                                       ),
                                       Expanded(
                                         child: Padding(
@@ -74,7 +74,7 @@ class CourseCarousel extends StatelessWidget {
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Text(
-                                                course.shortName,
+                                                course.shortname,
                                                 style: TextStyle(
                                                   fontSize: 12.0,
                                                   color: AppColors
@@ -86,7 +86,7 @@ class CourseCarousel extends StatelessWidget {
                                                 height: 2,
                                               ),
                                               Text(
-                                                course.name,
+                                                course.fullname,
                                                 style: TextStyle(
                                                   fontWeight: FontWeight.bold,
                                                   fontSize: 14.0,

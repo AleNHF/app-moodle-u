@@ -1,10 +1,10 @@
 // ignore_for_file: library_private_types_in_public_api
 
 import 'package:flutter/material.dart';
-import 'package:uagrm_app_moodle/home/utils/calendar_event_list.dart';
-import 'package:uagrm_app_moodle/home/utils/course_list.dart';
-import 'package:uagrm_app_moodle/home/viewmodel/calendar_event_viewmodel.dart';
-import 'package:uagrm_app_moodle/home/viewmodel/course_viewmodel.dart';
+import 'package:uagrm_app_moodle/views/home/utils/calendar_event_list.dart';
+import 'package:uagrm_app_moodle/views/home/utils/course_list.dart';
+import 'package:uagrm_app_moodle/viewmodels/calendar_event_viewmodel.dart';
+import 'package:uagrm_app_moodle/viewmodels/course_viewmodel.dart';
 
 class HomeView extends StatefulWidget {
   @override
