@@ -30,7 +30,13 @@ class AssigmentCard extends StatelessWidget {
                 ],
               ),
               subtitle: Text(activityname),
-              trailing: Icon(Icons.chevron_right),
+              trailing:
+                IconButton(
+                  onPressed: () {
+                    //TODO: Redireccionar a la vista de la tarea
+                  }, 
+                  icon: Icon(Icons.chevron_right)
+                ),
             ),
           ],
         ),

@@ -6,7 +6,10 @@ class CourseViewModel extends ChangeNotifier {
   final MoodleService _moodleService = MoodleService();
 
   List<Course> _courses = [];
+  bool _isLoading = false;
+
   List<Course> get courses => _courses;
+  bool get isLoading => _isLoading;
   
   CourseViewModel(){
     fetchCourses();
@@ -14,6 +17,7 @@ class CourseViewModel extends ChangeNotifier {
   
   Future<void> fetchCourses() async {
     try {
+      _isLoading = true;
       final List<dynamic> jsonResponse = await _moodleService.fetchCourses();
       print('Respuesta JSON: $jsonResponse'); // Imprimir la respuesta JSON
 
@@ -22,6 +26,9 @@ class CourseViewModel extends ChangeNotifier {
       print('Respuesta JSON Mapeada: $_courses');
     } catch (e) {
       print('Error al obtener cursos from view model: $e');
+    } finally {
+      _isLoading = false;
+      notifyListeners();
     }
   }
 }
