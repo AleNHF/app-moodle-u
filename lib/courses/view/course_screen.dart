@@ -13,7 +13,7 @@ class CourseScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final courseViewModel = context.watch<CourseViewModel>();
     final courses = courseViewModel.courses;
-
+    print('course view:$courses');
     return  Scaffold(
       appBar: AppBar(
         title: Text('Lista de cursos'),
@@ -24,7 +24,7 @@ class CourseScreen extends StatelessWidget {
         itemBuilder: (context, index) {
           final course = courses[index];
           return CustomCard(
-            imageUrl: course.courseimage,
+            imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThlzezOKuzEzpC89otwMZcgFKcHJc31JiWsmR5gmczWQ&s',
             courseName: course.fullname,
           );
         },

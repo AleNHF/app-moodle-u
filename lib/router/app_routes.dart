@@ -5,9 +5,10 @@ import 'package:uagrm_app_moodle/home/view/home_view.dart';
 import 'package:uagrm_app_moodle/router/models/menu_option.dart';
 
 class AppRoutes {
-  static const initialRoute = 'home';
+  static const initialRoute = 'course';
 
   static final menuOptions = <MenuOption>[
+    MenuOption(route: 'home', view: HomeView(), icon: Icons.book),
     MenuOption(route: 'course', view: CourseScreen(), icon: Icons.book)
 
   ];
