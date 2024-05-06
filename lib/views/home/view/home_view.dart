@@ -49,7 +49,11 @@ class _HomeViewState extends State<HomeView> {
                           color: AppColors.secondaryTextColor,
                         ),
                       ),
-                      trailing: Icon(Icons.chevron_right),
+                      trailing: IconButton(
+                        onPressed: () {
+                          //TODO: Redireccionar a la vista de calendario
+                        }, 
+                        icon: Icon(Icons.chevron_right)),
                     ),
                   ],
                 ),
