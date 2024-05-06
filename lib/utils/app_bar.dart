@@ -18,7 +18,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                 'https://images.pexels.com/photos/16653685/pexels-photo-16653685/free-photo-of-metal-arc.jpeg'), // Cambiar por la foto del usuario logueado
             radius: 20,
           ),
-          SizedBox(width: 20),
+          SizedBox(width: 15),
           Text(
             title,
           ),
