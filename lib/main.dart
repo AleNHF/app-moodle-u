@@ -1,46 +1,40 @@
-import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
-void main() {
-  runApp(MyApp());
+import 'package:provider/provider.dart';
+import 'package:uagrm_app_moodle/utils/bottom_app_bar.dart';
+
+import 'package:uagrm_app_moodle/viewmodels/course_viewmodel.dart';
+import 'package:uagrm_app_moodle/router/app_routes.dart';
+import 'package:uagrm_app_moodle/theme/app_theme.dart';
+// import 'package:flutter_dotenv/flutter_dotenv.dart';
+
+void main() async {
+  // await dotenv.load(fileName: '.env');
+  runApp(AppState());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
+class AppState extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (context) => MyAppState(),
-      child: MaterialApp(
-        title: 'Namer App',
-        theme: ThemeData(
-          useMaterial3: true,
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),
-        ),
-        home: MyHomePage(),
-      ),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => CourseViewModel(), lazy: false),
+      ],
+      child: MyApp(),
     );
   }
 }
 
-class MyAppState extends ChangeNotifier {
-  var current = WordPair.random();
-}
-
-class MyHomePage extends StatelessWidget {
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var appState = context.watch<MyAppState>();
-
-    return Scaffold(
-      body: Column(
-        children: [
-          Text('A random idea test:'),
-          Text(appState.current.asLowerCase),
-        ],
-      ),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'UAGRM - Virtual',
+      theme: AppTheme.lightTheme,
+      //initialRoute: AppRoutes.initialRoute,
+      routes: AppRoutes.getAppRoutes(),
+      home: CustomBottomAppBar(),
     );
   }
 }
