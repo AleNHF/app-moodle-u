@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:uagrm_app_moodle/utils/empty_card.dart';
 import 'package:uagrm_app_moodle/views/home/utils/calendar_event_card.dart';
 import 'package:uagrm_app_moodle/viewmodels/calendar_event_viewmodel.dart';
 
@@ -15,9 +16,19 @@ class CalendarEventList extends StatelessWidget {
       child: Consumer<CalendarEventViewModel>(
         builder: (context, viewModel, child) {
           final events = viewModel.calendarEvents;
+          final isLoading = viewModel.isLoading;
 
-          if (events.isEmpty) {
-            return  Center(child: CircularProgressIndicator());
+          if (isLoading) {
+            return Center(
+              child: CircularProgressIndicator(),
+            );
+          }
+
+          if (events.isEmpty) { 
+            return EmptyCard(
+              message: 'Ninguna actividad requiere acciones necesarias',
+              title: 'Línea de Tiempo',
+            );
           }
 
           return CalendarEventCard(events: events);

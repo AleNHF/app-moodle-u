@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:uagrm_app_moodle/models/calendar_event.dart';
 import 'package:uagrm_app_moodle/views/home/utils/assignment_card.dart';
 import 'package:uagrm_app_moodle/utils/base_card.dart';
-import 'package:uagrm_app_moodle/utils/empty_card.dart';
 
 class CalendarEventCard extends StatelessWidget {
   final List<Event> events;
@@ -15,20 +14,17 @@ class CalendarEventCard extends StatelessWidget {
         height: 350,
         child: BaseCard(
             title: 'Línea de Tiempo',
-            child: events.isNotEmpty
-                ? SizedBox(
-                    height: 250,
-                    child: ListView.builder(
-                        itemCount: events.length,
-                        itemBuilder: (context, index) {
-                          final event = events[index];
-                          return Padding(
-                              padding: EdgeInsets.only(left: 4, right: 4),
-                              child: AssigmentCard(
-                                  formattedtime: event.formattedtime,
-                                  activityname: event.activityname));
-                        }))
-                : EmptyCard(
-                    message: 'No hay actividades que requieran acciones')));
+            child: SizedBox(
+                height: 250,
+                child: ListView.builder(
+                    itemCount: events.length,
+                    itemBuilder: (context, index) {
+                      final event = events[index];
+                      return Padding(
+                          padding: EdgeInsets.only(left: 4, right: 4),
+                          child: AssigmentCard(
+                              formattedtime: event.formattedtime,
+                              activityname: event.activityname));
+                    }))));
   }
 }
