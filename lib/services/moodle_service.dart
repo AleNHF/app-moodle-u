@@ -11,16 +11,12 @@ class MoodleService {
   final String userId = '2';
 
   Future<List<dynamic>> fetchCourses() async {
-  print('Realizando solicitud HTTP...');
   const String wsfunction = 'core_enrol_get_users_courses';
   final url = Uri.parse(
     '$moodleUrl?wstoken=$wsToken&wsfunction=$wsfunction&moodlewsrestformat=json&userid=$userId',
   );
-  print('URL de solicitud: $url');
 
   final response = await http.post(url);
-  print('Código de respuesta: ${response.statusCode}');
-  print('Respuesta del servidor: ${response.body}');
 
   if (response.statusCode == 200) {
     return jsonDecode(response.body);

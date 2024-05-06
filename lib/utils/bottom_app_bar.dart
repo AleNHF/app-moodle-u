@@ -30,8 +30,15 @@ class _CustomBottomAppBarState extends State<CustomBottomAppBar> {
             });
           },
         ),
-        body: _widgetOptions.elementAt(_selectedIndex),    
-    );
+        body: SingleChildScrollView(
+            child: ConstrainedBox(
+          constraints: BoxConstraints(
+            minHeight: MediaQuery.of(context).size.height -
+                kToolbarHeight -
+                kBottomNavigationBarHeight,
+          ),
+          child: _widgetOptions.elementAt(_selectedIndex),
+        )));
   }
 
   List<BottomNavigationBarItem> _buildBottomNavBarItems(BuildContext context) {
@@ -40,9 +47,9 @@ class _CustomBottomAppBarState extends State<CustomBottomAppBar> {
     for (final option in AppRoutes.menuOptions) {
       if (option.route != 'bottomapp') {
         items.add(BottomNavigationBarItem(
-          backgroundColor: AppColors.optionalColor,
-          icon: Icon(option.icon),
-          label: option.name));
+            backgroundColor: AppColors.optionalColor,
+            icon: Icon(option.icon),
+            label: option.name));
       }
     }
 

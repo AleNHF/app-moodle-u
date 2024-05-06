@@ -1,6 +1,7 @@
 // ignore_for_file: library_private_types_in_public_api
 
 import 'package:flutter/material.dart';
+import 'package:uagrm_app_moodle/theme/app_colors.dart';
 import 'package:uagrm_app_moodle/views/home/utils/calendar_event_list.dart';
 import 'package:uagrm_app_moodle/views/home/utils/course_list.dart';
 import 'package:uagrm_app_moodle/viewmodels/calendar_event_viewmodel.dart';
@@ -12,7 +13,7 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-  late final CourseViewModel viewModelCourse; 
+  late final CourseViewModel viewModelCourse;
   late final CalendarEventViewModel viewModelEvent;
 
   @override
@@ -27,9 +28,33 @@ class _HomeViewState extends State<HomeView> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: Column(
+    return Column(
       children: [
+        Padding(
+            padding: EdgeInsets.all(8),
+            child: Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(5.0),
+                side: BorderSide(color: AppColors.primaryTextColor, width: 0.5),
+              ),
+              child: SizedBox(
+                child: Column(
+                  children: [
+                    ListTile(
+                      title: Text(
+                        'Calendario',
+                        style: TextStyle(
+                          fontSize: 16.0,
+                          fontWeight: FontWeight.bold,
+                          color: AppColors.secondaryTextColor,
+                        ),
+                      ),
+                      trailing: Icon(Icons.chevron_right),
+                    ),
+                  ],
+                ),
+              ),
+            )),
         Padding(
           padding: EdgeInsets.all(8),
           child: CourseList(viewModel: viewModelCourse),
@@ -39,7 +64,7 @@ class _HomeViewState extends State<HomeView> {
           child: CalendarEventList(viewModel: viewModelEvent),
         ),
       ],
-    ));
+    );
   }
 
   @override
