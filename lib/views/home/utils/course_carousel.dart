@@ -24,7 +24,7 @@ class CourseCarousel extends StatelessWidget {
                   return Padding(
                       padding: EdgeInsets.only(left: 5, right: 5),
                       child: CourseCard(
-                          courseimage: course.courseimage,
+                          courseimage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThlzezOKuzEzpC89otwMZcgFKcHJc31JiWsmR5gmczWQ&s',
                           shortname: course.shortname,
                           fullname: course.fullname));
                 },
