@@ -19,8 +19,9 @@ class CourseViewModel extends ChangeNotifier {
     try {
       _isLoading = true;
       final List<dynamic> jsonResponse = await _moodleService.fetchCourses();
-      
-      _courses = jsonResponse.map((json) => Course.fromJson(json)).toList();   
+
+      _courses = jsonResponse.map((json) => Course.fromJson(json)).toList();
+      notifyListeners();
     } catch (e) {
       print('Error al obtener cursos from view model: $e');
     } finally {
