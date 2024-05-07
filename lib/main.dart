@@ -6,6 +6,7 @@ import 'package:uagrm_app_moodle/utils/bottom_app_bar.dart';
 import 'package:uagrm_app_moodle/viewmodels/course_viewmodel.dart';
 import 'package:uagrm_app_moodle/router/app_routes.dart';
 import 'package:uagrm_app_moodle/theme/app_theme.dart';
+import 'package:uagrm_app_moodle/views/calendar/view/calendar_view.dart';
 // import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 void main() async {

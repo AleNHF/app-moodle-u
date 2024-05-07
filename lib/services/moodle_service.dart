@@ -4,11 +4,13 @@ import 'package:http/http.dart' as http;
 class MoodleService {
   /* final String? moodleUrl = dotenv.env['MOODLE_API_URL'];
   final String? wsToken = dotenv.env['MOODLE_API_TOKEN']; */
-  final String? moodleUrl = 'http://localhost/escuela-moodle/moodle/webservice/rest/server.php';
-  final String? wsToken = 'c08d2527a618923757be412d964d0209';
+  //final String? moodleUrl = 'http://localhost/escuela-moodle/moodle/webservice/rest/server.php';
+  //final String? wsToken = 'c08d2527a618923757be412d964d0209';
+  final String? moodleUrl = 'http://localhost/moodle/webservice/rest/server.php/webservice/rest/server.php';
+  final String? wsToken = 'b89005ce3c945c9a3ecc0109a974b30f';
 
   //TODO: Get user id from auth
-  final String userId = '2';
+  final String userId = '4';
 
   Future<List<dynamic>> fetchCourses() async {
   const String wsfunction = 'core_enrol_get_users_courses';
@@ -17,6 +19,8 @@ class MoodleService {
   );
 
   final response = await http.post(url);
+  print('Response.body Courses: ${response.body}');
+  print('Response.statusCode Courses: ${response.statusCode}');
 
   if (response.statusCode == 200) {
     return jsonDecode(response.body);

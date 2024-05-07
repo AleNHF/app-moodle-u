@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:uagrm_app_moodle/utils/bottom_app_bar.dart';
+import 'package:uagrm_app_moodle/views/calendar/view/calendar_view.dart';
 import 'package:uagrm_app_moodle/views/courses/view/course_screen.dart';
 import 'package:uagrm_app_moodle/views/home/view/home_view.dart';
 import 'package:uagrm_app_moodle/router/models/menu_option.dart';
@@ -18,6 +19,7 @@ class AppRoutes {
         view: CourseScreen(),
         icon: Icons.book,
         name: 'Cursos'),
+    MenuOption(route: 'calendar', view: ExamplePage(), icon: Icons.calendar_month_outlined, name: 'Calendario'),
     MenuOption(
         route: 'bottomapp',
         view: CustomBottomAppBar(),
