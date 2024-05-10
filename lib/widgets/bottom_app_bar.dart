@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:uagrm_app_moodle/utils/app_bar.dart';
+import 'package:uagrm_app_moodle/widgets/app_bar.dart';
 import 'package:uagrm_app_moodle/views/calendar/view/calendar_view.dart';
 import 'package:uagrm_app_moodle/views/courses/view/course_view.dart';
 import 'package:uagrm_app_moodle/views/home/view/home_view.dart';
@@ -14,7 +14,11 @@ class CustomBottomAppBar extends StatefulWidget {
 class _CustomBottomAppBarState extends State<CustomBottomAppBar> {
   int _selectedIndex = 0;
 
-  List<Widget> _widgetOptions = <Widget>[HomeView(), CourseView(), ExamplePage()];
+  List<Widget> _widgetOptions = <Widget>[
+    HomeView(),
+    CourseView(),
+    CalendarView()
+  ];
 
   @override
   Widget build(BuildContext context) {

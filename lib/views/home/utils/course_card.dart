@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:uagrm_app_moodle/theme/app_colors.dart';
 
 class CourseCard extends StatelessWidget {
@@ -7,12 +6,11 @@ class CourseCard extends StatelessWidget {
   final String shortname;
   final String fullname;
 
-  const CourseCard({
-    super.key,
-    required this.courseimage,
-    required this.shortname,
-    required this.fullname
-  });
+  const CourseCard(
+      {super.key,
+      required this.courseimage,
+      required this.shortname,
+      required this.fullname});
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +19,7 @@ class CourseCard extends StatelessWidget {
         //TODO: Redireccionar a vista de un curso
       },
       child: Card(
+          color: Colors.white,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16.0),
           ),
@@ -41,7 +40,10 @@ class CourseCard extends StatelessWidget {
                       topRight: Radius.circular(16.0),
                     ),
                   ),
-                  child: SvgPicture.network(courseimage),
+                  child: Image.network(
+                    courseimage,
+                    fit: BoxFit.fill,
+                  ), //SvgPicture.network(courseimage),
                 ),
                 Expanded(
                   child: Padding(

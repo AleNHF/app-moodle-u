@@ -139,6 +139,7 @@ class CalendarSliderState extends State<CalendarSlider>
     initializeDateFormatting(_locale);
     _initCalendar();
     padding = 25.0;
+    
     if (widget.selectedDayPosition == SelectedDayPosition.center) {
       _initialScrollAlignment = 0.44;
       _scrollAlignment = 0.42;
@@ -294,12 +295,12 @@ class CalendarSliderState extends State<CalendarSlider>
             top: 0.0,
             child: Container(
               width: MediaQuery.of(context).size.width,
-              height: 190.0,
+              height: 150.0,
               color: widget.backgroundColor ?? Colors.transparent,
             ),
           ),
           Positioned(
-            top: 50,
+            top: 20,
             child: Padding(
               padding: EdgeInsets.only(right: padding, left: 10),
               child: SizedBox(
@@ -325,7 +326,8 @@ class CalendarSliderState extends State<CalendarSlider>
                                         widget.monthYearButtonBackgroundColor,
                                   ),
                                   child: Text(
-                                    ('${DateFormat.yMMMM(Locale(_locale).toString()).format(_selectedDate!).split(' ')[0].substring(0, 3)}  ${DateFormat.yMMMM(Locale(_locale).toString()).format(_selectedDate!).split(' ')[1]}'),
+                                    //('${DateFormat.yMMMM(Locale(_locale).toString()).format(_selectedDate!).split(' ')[0].substring(0, 3)}  ${DateFormat.yMMMM(Locale(_locale).toString()).format(_selectedDate!).split(' ')[1]}'),
+                                    ('${DateFormat.MMM().format(_selectedDate!)} ${DateFormat.y(_locale.toString()).format(_selectedDate!)}'),
                                     style: TextStyle(
                                       overflow: TextOverflow.clip,
                                       fontSize: 18.0,
@@ -345,7 +347,7 @@ class CalendarSliderState extends State<CalendarSlider>
             ),
           ),
           Positioned(
-            bottom: 0.0,
+            bottom: 25.0,
             child: dayList(),
           ),
         ],

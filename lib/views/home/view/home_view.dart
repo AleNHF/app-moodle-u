@@ -51,7 +51,7 @@ class _HomeViewState extends State<HomeView> {
                       ),
                       trailing: IconButton(
                         onPressed: () {
-                          //TODO: Redireccionar a la vista de calendario
+                          //Navigator.push(context, "calendar");
                         }, 
                         icon: Icon(Icons.chevron_right)),
                     ),

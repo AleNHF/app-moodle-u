@@ -12,7 +12,6 @@ class CourseViewModel extends ChangeNotifier {
   bool get isLoading => _isLoading;
   
   CourseViewModel(){
-    print('Entra courseviewmodel');
     fetchCourses();
   }
   
@@ -20,10 +19,7 @@ class CourseViewModel extends ChangeNotifier {
     try {
       _isLoading = true;
       final List<dynamic> jsonResponse = await _moodleService.fetchCourses();
-      print('jsonResponse CourseViewModel: ${jsonResponse}');
-      
       _courses = jsonResponse.map((json) => Course.fromJson(json)).toList();   
-      print('_course: $_courses');
     } catch (e) {
       print('Error al obtener cursos from view model: $e');
     } finally {

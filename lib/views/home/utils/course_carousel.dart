@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:uagrm_app_moodle/models/course.dart';
-import 'package:uagrm_app_moodle/utils/base_card.dart';
+import 'package:uagrm_app_moodle/widgets/base_card.dart';
 import 'package:uagrm_app_moodle/views/home/utils/course_card.dart';
 
 class CourseCarousel extends StatelessWidget {
@@ -11,7 +11,7 @@ class CourseCarousel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-        height: 240,
+        height: 235,
         child: BaseCard(
             title: 'Mis Cursos',
             child: SizedBox(

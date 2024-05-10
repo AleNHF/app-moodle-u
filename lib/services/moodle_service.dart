@@ -19,8 +19,6 @@ class MoodleService {
   );
 
   final response = await http.post(url);
-  print('Response.body Courses: ${response.body}');
-  print('Response.statusCode Courses: ${response.statusCode}');
 
   if (response.statusCode == 200) {
     return jsonDecode(response.body);

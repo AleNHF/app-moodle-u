@@ -13,6 +13,7 @@ class EmptyCard extends StatelessWidget {
     return  SizedBox(
         height: 240,
         child: Card(
+          color: Colors.white,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(5.0),
             side: BorderSide(
