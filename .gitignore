@@ -46,3 +46,11 @@ app.*.map.json
 
 # Ignorar el archivo pubspec.lock
 pubspec.lock
+
+# Ignorar archivos linux/flutter
+linux/flutter/generated_plugin_registrant.cc
+linux/flutter/generated_plugins.cmake
+macos/Flutter/GeneratedPluginRegistrant.swift
+windows/flutter/generated_plugin_registrant.cc
+windows/flutter/generated_plugins.cmake
+android/app/build.gradle
