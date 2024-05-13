@@ -29,6 +29,7 @@ class AppRoutes {
   ];
 
   static Map<String, Widget Function(BuildContext)> routes = {
+    'login': (context) => LoginView(),
     'home': (context) => HomeView(),
     'course': (context) => CourseView(),
     'calendar': (context) => CalendarView()

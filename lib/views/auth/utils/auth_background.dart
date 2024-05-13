@@ -15,7 +15,7 @@ class AuthBackground extends StatelessWidget {
       height: double.infinity,
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage('login.jpg'),
+          image: AssetImage('assets/images/login.jpg'),
           fit: BoxFit.cover
         )
       ),
