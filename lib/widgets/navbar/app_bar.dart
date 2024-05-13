@@ -29,7 +29,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           padding: EdgeInsets.only(right: 10),
           child: IconButton(
               icon: Icon(
-                Icons.notifications_outlined,
+                Icons.menu_rounded,
                 color: AppColors.bgPrimaryColor,
                 size: 30,
               ),

@@ -12,6 +12,7 @@ class CourseCarousel extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
         height: 235,
+        width: double.infinity,
         child: BaseCard(
             title: 'Mis Cursos',
             child: SizedBox(
