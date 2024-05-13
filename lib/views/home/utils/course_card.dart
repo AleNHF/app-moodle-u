@@ -15,65 +15,10 @@ class CourseCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-        onTap: () {
-          //TODO: Redireccionar a vista de un curso
-        },
-        child: Container(
-          margin: EdgeInsets.symmetric(horizontal: 10),
-          height: 200,
-          width: 250,
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              color: Colors.white,
-              boxShadow: [BoxShadow(blurRadius: 5, color: Colors.black12)]),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                height: 80,
-                width: double.infinity,
-                padding: EdgeInsets.all(5),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Colors.green),
-                child: Image.network(
-                  courseimage,
-                  fit: BoxFit.cover,
-                ),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Padding(
-                padding: EdgeInsets.all(8),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      shortname,
-                      style: TextStyle(
-                        fontSize: 12.0,
-                        color: AppColors.primaryTextColor,
-                        fontWeight: FontWeight.w300,
-                      ),
-                    ),
-                    SizedBox(
-                      height: 2,
-                    ),
-                    Text(
-                      fullname,
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 14.0,
-                      ),
-                    ),
-                  ],
-                ),
-              )
-            ],
-          ),
-        )
-        /* Card(
+      onTap: () {
+        //TODO: Redireccionar a vista de un curso
+      },
+      child: Card(
           color: Colors.white,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16.0),
@@ -130,7 +75,7 @@ class CourseCard extends StatelessWidget {
                 )
               ],
             ),
-          )), */
-        );
+          )),
+    );
   }
 }

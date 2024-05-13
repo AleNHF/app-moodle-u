@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-// import 'package:flutter_svg/flutter_svg.dart';
 
 class CustomCard extends StatelessWidget {
 
@@ -18,8 +17,8 @@ class CustomCard extends StatelessWidget {
       color: Colors.white,
       elevation: 0.0,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(8.0), // Radio del borde redondeado
-        side: BorderSide(color: Colors.grey.shade300, width: 0.8), // Color y ancho del borde
+        borderRadius: BorderRadius.circular(8.0), 
+        side: BorderSide(color: Colors.grey.shade300, width: 0.8),
       ),
       child: Padding(
         padding: const EdgeInsets.all(12.0),

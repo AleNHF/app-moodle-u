@@ -45,7 +45,6 @@ class _AssigmentWidgetState extends State<AssigmentWidget> {
             : Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  //SvgPicture.asset('undraw_playful_cat.svg'),
                   SvgPicture.asset('assets/images/undraw_playful_cat.svg'),
                   Text(
                     'No tienes tareas pendientes para hoy',

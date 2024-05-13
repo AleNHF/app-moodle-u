@@ -2,8 +2,6 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class MoodleService {
-  /* final String? moodleUrl = dotenv.env['MOODLE_API_URL'];
-  final String? wsToken = dotenv.env['MOODLE_API_TOKEN']; */
   //final String? moodleUrl = 'http://192.168.1.216/moodle/webservice/rest/server.php';
   //final String? wsToken = '2e36c0e5b3413dad7c7d67e084aa3c1c';
   final String? moodleUrl = 'http://192.168.0.13/moodle/webservice/rest/server.php';

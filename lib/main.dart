@@ -8,10 +8,8 @@ import 'package:uagrm_app_moodle/views/home/view/home_view.dart';
 import 'package:uagrm_app_moodle/viewmodels/course_viewmodel.dart';
 import 'package:uagrm_app_moodle/router/app_routes.dart';
 import 'package:uagrm_app_moodle/theme/app_theme.dart';
-// import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 void main() async {
-  // await dotenv.load(fileName: '.env');
   runApp(AppState());
 }
 
@@ -34,7 +32,6 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'UAGRM - Virtual',
       theme: AppTheme.lightTheme,
-      //initialRoute: AppRoutes.initialRoute,
       routes: AppRoutes.routes,
       home: HomeScreen(),
     );
@@ -60,7 +57,6 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //appBar: CustomAppBar(title: 'UAGRM - Virtual'),
       body: _screens[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
