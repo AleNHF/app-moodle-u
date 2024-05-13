@@ -11,11 +11,15 @@ dependencies:
   english_words: ^4.0.0
   flutter:
     sdk: flutter
+
+  provider: ^6.1.2
+  cupertino_icons: ^1.0.2
+  http: any
   flutter_hooks: ^0.20.5
   flutter_secure_storage: ^9.1.1
   flutter_svg: ^2.0.10+1
-  http: any
-  provider: ^6.1.2
+  intl: ^0.19.0
+  scrollable_positioned_list: ^0.3.8
 
 dev_dependencies:
 
@@ -26,6 +30,7 @@ dev_dependencies:
 flutter:
   uses-material-design: true
 
-assets:
-  - login.jpg
-  # - undraw_no_data.svg
+  assets:
+    - assets/images/undraw_no_data.svg
+    - assets/images/undraw_playful_cat.svg
+    - assets/images/undraw_no_data.png

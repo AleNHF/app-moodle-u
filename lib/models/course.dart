@@ -6,13 +6,13 @@ class Course {
     String fullname;
     String displayname;
     int enrolledusercount;
-    String idnumber;
+    String? idnumber;
     int visible;
-    String summary;
+    String? summary;
     int summaryformat;
     String format;
     bool showgrades;
-    String lang;
+    String? lang;
     bool enablecompletion;
     bool completionhascriteria;
     bool completionusertracked;
@@ -22,7 +22,7 @@ class Course {
     int startdate;
     int enddate;
     int marker;
-    int lastaccess;
+    int? lastaccess;
     bool isfavourite;
     bool hidden;
     List<dynamic> overviewfiles;
@@ -36,13 +36,13 @@ class Course {
         required this.fullname,
         required this.displayname,
         required this.enrolledusercount,
-        required this.idnumber,
+        this.idnumber,
         required this.visible,
-        required this.summary,
+        this.summary,
         required this.summaryformat,
         required this.format,
         required this.showgrades,
-        required this.lang,
+        this.lang,
         required this.enablecompletion,
         required this.completionhascriteria,
         required this.completionusertracked,
@@ -52,7 +52,7 @@ class Course {
         required this.startdate,
         required this.enddate,
         required this.marker,
-        required this.lastaccess,
+        this.lastaccess,
         required this.isfavourite,
         required this.hidden,
         required this.overviewfiles,

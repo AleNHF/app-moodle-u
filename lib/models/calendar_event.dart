@@ -222,7 +222,6 @@ class Course {
     bool visible;
     bool showactivitydates;
     bool showcompletionconditions;
-    String pdfexportfont;
     String fullnamedisplay;
     String viewurl;
     String courseimage;
@@ -245,7 +244,6 @@ class Course {
         required this.visible,
         required this.showactivitydates,
         required this.showcompletionconditions,
-        required this.pdfexportfont,
         required this.fullnamedisplay,
         required this.viewurl,
         required this.courseimage,
@@ -269,7 +267,6 @@ class Course {
         visible: json["visible"],
         showactivitydates: json["showactivitydates"],
         showcompletionconditions: json["showcompletionconditions"],
-        pdfexportfont: json["pdfexportfont"],
         fullnamedisplay: json["fullnamedisplay"],
         viewurl: json["viewurl"],
         courseimage: json["courseimage"],
@@ -293,7 +290,6 @@ class Course {
         "visible": visible,
         "showactivitydates": showactivitydates,
         "showcompletionconditions": showcompletionconditions,
-        "pdfexportfont": pdfexportfont,
         "fullnamedisplay": fullnamedisplay,
         "viewurl": viewurl,
         "courseimage": courseimage,

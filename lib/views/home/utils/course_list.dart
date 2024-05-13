@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:uagrm_app_moodle/utils/empty_card.dart';
+import 'package:uagrm_app_moodle/widgets/cards/empty_card.dart';
 import 'package:uagrm_app_moodle/views/home/utils/course_carousel.dart';
 import 'package:uagrm_app_moodle/viewmodels/course_viewmodel.dart';
 
