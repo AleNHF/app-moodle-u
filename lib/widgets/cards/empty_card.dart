@@ -12,7 +12,9 @@ class EmptyCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return  SizedBox(
         height: 240,
+        width: 380,
         child: Card(
+          color: Colors.white,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(5.0),
             side: BorderSide(
@@ -35,7 +37,7 @@ class EmptyCard extends StatelessWidget {
                 ),
               ),
               Expanded(
-                child: SvgPicture.asset('undraw_no_data.svg'),
+                child: SvgPicture.asset('assets/images/undraw_no_data.svg'),
               ),
               Padding(
                 padding: EdgeInsets.only(left: 15, right: 15, bottom: 15),
