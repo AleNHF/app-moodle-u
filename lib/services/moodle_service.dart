@@ -6,7 +6,7 @@ class MoodleService {
   final String? wsToken = dotenv.env['MOODLE_API_TOKEN']; */
   //final String? moodleUrl = 'http://192.168.1.216/moodle/webservice/rest/server.php';
   //final String? wsToken = '2e36c0e5b3413dad7c7d67e084aa3c1c';
-  final String? moodleUrl = 'http://localhost/moodle/webservice/rest/server.php/webservice/rest/server.php';
+  final String? moodleUrl = 'http://192.168.0.13/moodle/webservice/rest/server.php';
   final String? wsToken = 'b89005ce3c945c9a3ecc0109a974b30f';
 
   //TODO: Get user id from auth

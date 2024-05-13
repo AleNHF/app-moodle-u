@@ -57,8 +57,8 @@ class _CalendarWidgetState extends State<CalendarWidget> {
             });
           },
         ),
-        
-        AssigmentWidget(assigments: widget.events, selectedDate: _selectedDateNotAppBBar),
+        AssigmentWidget(
+            assigments: widget.events, selectedDate: _selectedDateNotAppBBar),
         ElevatedButton(
           onPressed: () {
             _firstController.goToDay(DateTime.now());
@@ -85,7 +85,8 @@ List<DateTime> getDateFromEvents(List<Event> assignments) {
     // Parsear la fecha utilizando DateFormat
     DateFormat inputFormat = DateFormat('EEEE, dd MMMM, HH:mm', 'es');
     DateTime dateTime = inputFormat.parse(result);
-    dateTime = DateTime(currentYear, dateTime.month, dateTime.day, dateTime.hour, dateTime.minute);
+    dateTime = DateTime(currentYear, dateTime.month, dateTime.day,
+        dateTime.hour, dateTime.minute);
     DateTime parsedDateTime = dateTime;
 
     dateTimeList.add(parsedDateTime);

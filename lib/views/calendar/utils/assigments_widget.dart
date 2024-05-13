@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl/intl.dart';
 import 'package:uagrm_app_moodle/models/calendar_event.dart';
-import 'package:uagrm_app_moodle/widgets/assignment_card.dart';
+import 'package:uagrm_app_moodle/widgets/cards/assignment_card.dart';
 import '../utils/calendar_slider.dart';
 
 class AssigmentWidget extends StatefulWidget {
@@ -45,7 +45,8 @@ class _AssigmentWidgetState extends State<AssigmentWidget> {
             : Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  SvgPicture.asset('undraw_playful_cat.svg'),
+                  //SvgPicture.asset('undraw_playful_cat.svg'),
+                  SvgPicture.asset('assets/images/undraw_playful_cat.svg'),
                   Text(
                     'No tienes tareas pendientes para hoy',
                     style: TextStyle(

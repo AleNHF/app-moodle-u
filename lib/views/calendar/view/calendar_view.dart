@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:uagrm_app_moodle/viewmodels/calendar_event_viewmodel.dart';
 import 'package:uagrm_app_moodle/views/calendar/utils/assigments_list.dart';
+import 'package:uagrm_app_moodle/widgets/navbar/app_bar.dart';
 
 class CalendarView extends StatefulWidget {
   const CalendarView({Key? key}) : super(key: key);
@@ -21,14 +22,17 @@ class _CalendarViewState extends State<CalendarView> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        AssigmentList(viewModel: viewModel)
-      ],
+    return Scaffold(
+      appBar: CustomAppBar(title: 'UAGRM - Calendario'),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [AssigmentList(viewModel: viewModel)],
+        ),
+      ),
     );
   }
 
-    @override
+  @override
   void dispose() {
     viewModel.dispose();
     super.dispose();

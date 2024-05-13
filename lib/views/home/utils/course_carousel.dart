@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:uagrm_app_moodle/models/course.dart';
-import 'package:uagrm_app_moodle/widgets/base_card.dart';
+import 'package:uagrm_app_moodle/widgets/cards/base_card.dart';
 import 'package:uagrm_app_moodle/views/home/utils/course_card.dart';
 
 class CourseCarousel extends StatelessWidget {

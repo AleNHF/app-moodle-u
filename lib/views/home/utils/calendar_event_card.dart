@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:uagrm_app_moodle/models/calendar_event.dart';
-import 'package:uagrm_app_moodle/widgets/assignment_card.dart';
-import 'package:uagrm_app_moodle/widgets/base_card.dart';
+import 'package:uagrm_app_moodle/widgets/cards/assignment_card.dart';
+import 'package:uagrm_app_moodle/widgets/cards/base_card.dart';
 
 class CalendarEventCard extends StatelessWidget {
   final List<Event> events;
