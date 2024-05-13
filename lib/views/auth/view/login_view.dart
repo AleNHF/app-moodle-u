@@ -133,7 +133,7 @@ class _LoginForm extends StatelessWidget {
               loginForm.isLoading
               ? 'Accediendo...'
               : 'Acceder', 
-              style: TextStyle(color: AppColors.primaryTextColor),
+              style: TextStyle(color: AppColors.optionalColor),
             ), 
           ),
         ],

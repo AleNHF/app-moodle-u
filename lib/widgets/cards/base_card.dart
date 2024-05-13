@@ -16,14 +16,6 @@ class BaseCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Colors.white,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(5.0),
-        side: BorderSide(
-          color: AppColors.primaryTextColor,
-          width: 0.5,
-        ),
-      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

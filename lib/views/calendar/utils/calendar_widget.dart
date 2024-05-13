@@ -63,7 +63,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
           onPressed: () {
             _firstController.goToDay(DateTime.now());
           },
-          child: const Text("Ir a hoy"),
+          child: const Text("Ir a hoy", style: TextStyle(color: AppColors.optionalColor),),
         ),
       ],
     );

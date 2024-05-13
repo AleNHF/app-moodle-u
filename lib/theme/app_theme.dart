@@ -69,18 +69,20 @@ class AppTheme {
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         elevation: 8.0,
+        shadowColor: Colors.transparent,
         minimumSize: const Size(double.infinity, 56.0),
         backgroundColor: AppColors.primaryRed,
         disabledBackgroundColor: AppColors.primaryRed.withOpacity(0.4),
         disabledForegroundColor: Colors.grey,
         padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 16.0),
-        textStyle: const TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold, color:AppColors.primaryTextColor),
+        textStyle: const TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold, color: Colors.white),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
       ),
     ),
 
     outlinedButtonTheme: OutlinedButtonThemeData(
       style: OutlinedButton.styleFrom(
+        shadowColor: Colors.transparent,
         side: const BorderSide(color: AppColors.primaryRed, width: 1.5),
         minimumSize: const Size(double.infinity, 56.0),
         disabledForegroundColor: Colors.grey,
@@ -99,6 +101,19 @@ class AppTheme {
         textStyle: const TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
       ),
+    ),
+
+    //Card
+    cardTheme: CardTheme(
+      elevation: 0.0,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(8.0), 
+        side: BorderSide(
+          color: AppColors.primaryTextColor,
+          width: 0.8,
+        ),
+      ),
+      color: Colors.white,
     ),
   );
 }
