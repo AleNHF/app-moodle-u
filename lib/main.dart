@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'UAGRM - Virtual',
       theme: AppTheme.lightTheme,
-      //initialRoute: AppRoutes.initialRoute,
+      initialRoute: AppRoutes.initialRoute,
       routes: AppRoutes.getAppRoutes(),
       home: CustomBottomAppBar(),
     );

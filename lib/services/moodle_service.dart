@@ -11,19 +11,19 @@ class MoodleService {
   final String userId = '3';
 
   Future<List<dynamic>> fetchCourses() async {
-  const String wsfunction = 'core_enrol_get_users_courses';
-  final url = Uri.parse(
-    '$moodleUrl?wstoken=$wsToken&wsfunction=$wsfunction&moodlewsrestformat=json&userid=$userId',
-  );
+    const String wsfunction = 'core_enrol_get_users_courses';
+    final url = Uri.parse(
+      '$moodleUrl?wstoken=$wsToken&wsfunction=$wsfunction&moodlewsrestformat=json&userid=$userId',
+    );
 
-  final response = await http.post(url);
+    final response = await http.post(url);
 
-  if (response.statusCode == 200) {
-    return jsonDecode(response.body);
-  } else {
-    throw Exception('Error al obtener cursos: ${response.statusCode}');
+    if (response.statusCode == 200) {
+      return jsonDecode(response.body);
+    } else {
+      throw Exception('Error al obtener cursos: ${response.statusCode}');
+    }
   }
-}
 
   Future<List<dynamic>> fetchAssigments() async {
     const String wsfunction = 'mod_assign_get_assignments';
@@ -47,6 +47,27 @@ class MoodleService {
       return jsonResponse['events'];
     } else {
       throw Exception('Error al obtener eventos del calendario: ${response.statusCode}');
+    }
+  }
+
+  Future<Map<String, dynamic>> authenticate(String username, String password, String service) async {
+    final loginUrl = Uri.parse('http://192.168.1.5/moodle/login/token.php');
+    final response = await http.post(loginUrl, body: {
+      'username': username,
+      'password': password,
+      'service': service,
+    });
+
+    if (response.statusCode == 200) {
+      final authTokenResponse = jsonDecode(response.body);
+
+      if (authTokenResponse.containsKey('token')) {
+        return authTokenResponse;
+      } else {
+        throw Exception(authTokenResponse['error']);
+      }
+    } else {
+      throw Exception('Error de autenticación: ${response.statusCode}');
     }
   }
 }

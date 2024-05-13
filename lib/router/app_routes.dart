@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:uagrm_app_moodle/utils/bottom_app_bar.dart';
+import 'package:uagrm_app_moodle/views/auth/view/login_view.dart';
 import 'package:uagrm_app_moodle/views/courses/view/course_view.dart';
 import 'package:uagrm_app_moodle/views/home/view/home_view.dart';
 import 'package:uagrm_app_moodle/router/models/menu_option.dart';
 
 class AppRoutes {
-  static const initialRoute = 'bottomappbar';
+  static const initialRoute = 'login';
 
   static final menuOptions = <MenuOption>[
+    MenuOption(
+        route: 'login', 
+        view: LoginView(), 
+        icon: Icons.dashboard, 
+        name: 'Login'),
     MenuOption(
         route: 'home', 
         view: HomeView(), 
@@ -22,7 +28,7 @@ class AppRoutes {
         route: 'bottomapp',
         view: CustomBottomAppBar(),
         icon: Icons.dashboard_customize,
-        name: 'BottomAppBar')
+        name: 'BottomAppBar'),
   ];
 
   static Map<String, Widget Function(BuildContext)> routes = {
