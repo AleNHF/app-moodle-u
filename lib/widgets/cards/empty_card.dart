@@ -12,7 +12,7 @@ class EmptyCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return  SizedBox(
         height: 240,
-        width: 380,
+        width: double.infinity,
         child: Card(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,

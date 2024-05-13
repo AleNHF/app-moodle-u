@@ -11,7 +11,6 @@ class CalendarEventCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-
         child: BaseCard(
             title: 'Línea de Tiempo',
             child: SizedBox(
