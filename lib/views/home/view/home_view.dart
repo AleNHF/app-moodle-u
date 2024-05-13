@@ -37,10 +37,6 @@ class _HomeViewState extends State<HomeView> {
             Padding(
                 padding: EdgeInsets.all(8),
                 child: Card(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5.0),
-                    side: BorderSide(color: AppColors.primaryTextColor, width: 0.5),
-                  ),
                   child: SizedBox(
                     child: Column(
                       children: [
