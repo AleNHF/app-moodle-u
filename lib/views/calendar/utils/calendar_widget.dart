@@ -59,11 +59,14 @@ class _CalendarWidgetState extends State<CalendarWidget> {
         ),
         AssigmentWidget(
             assigments: widget.events, selectedDate: _selectedDateNotAppBBar),
-        ElevatedButton(
-          onPressed: () {
-            _firstController.goToDay(DateTime.now());
-          },
-          child: const Text("Ir a hoy"),
+        Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: ElevatedButton(
+            onPressed: () {
+              _firstController.goToDay(DateTime.now());
+            },
+            child: const Text("Ir a hoy", style: TextStyle(color: AppColors.optionalColor),),
+          ),
         ),
       ],
     );
