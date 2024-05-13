@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:uagrm_app_moodle/utils/bottom_app_bar.dart';
 import 'package:uagrm_app_moodle/views/auth/view/login_view.dart';
 import 'package:uagrm_app_moodle/views/calendar/view/calendar_view.dart';
 import 'package:uagrm_app_moodle/views/courses/view/course_view.dart';
